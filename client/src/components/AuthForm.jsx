@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import logo from "../assets/Images/logo.png";
+import logo from "../assets/Images/NoteXlogo.png";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import AuthSocialButton from "./AuthSocialButton";
 
@@ -18,16 +18,16 @@ const AuthForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Your form submission logic here
+    // form submission logic
   };
 
   return (
-    <div className="bg-black h-screen flex justify-center items-center">
+    <div className="bg-custom h-screen flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <div className="flex justify-center items-center h-full">
           <img src={logo} className="w-40 h-40" />
         </div>
-        <h1 className="text-2xl mb-4 text-gray-700 text-center pt-4">
+        <h1 className="text-2xl mb-4 text-gray-700 text-center pt-4 mr-2 font-bold opacity-50">
           {variant === "REGISTER" ? "Register" : "Login"}
         </h1>
         <form onSubmit={handleSubmit}>
@@ -71,7 +71,13 @@ const AuthForm = () => {
           </div>
           <div className="pt-4">
             <button
-              className="w-full bg-zinc-500 text-white p-2 rounded hover:bg-zinc-400"
+              className="bg-white px-8 py-2 rounded-full 
+              w-full
+              text-lg hover:bg-gray-300 transition duration-300
+              bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+              hover:from-indigo-600 hover:via-pink-600
+              hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
+             "
               type="submit"
             >
               {variant === "REGISTER" ? "Register" : "Login"}
@@ -112,15 +118,15 @@ const AuthForm = () => {
           <div className="flex justify-center items-center pt-4">
             {variant === "REGISTER" ? (
               <>
-                <p className="mr-2">Already have an account?</p>
-                <button onClick={toggleVariant} className="underline">
+                <p className="mr-2 font-bold opacity-50">Already have an account?</p>
+                <button onClick={toggleVariant} className="mr-2 font-bold opacity-50 underline">
                   Login here
                 </button>
               </>
             ) : (
               <>
-                <p className="mr-2">New to NoteX?</p>
-                <button onClick={toggleVariant} className="underline">
+                <p className="mr-2 mr-2 font-bold opacity-50">New to NoteX?</p>
+                <button onClick={toggleVariant} className="mr-2 font-bold opacity-50 underline">
                   Register here
                 </button>
               </>

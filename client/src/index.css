@@ -1,3 +1,10 @@
+.bg-custom {
+  background-image: url("./assets/Images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
