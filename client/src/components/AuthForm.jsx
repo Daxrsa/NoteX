@@ -74,7 +74,7 @@ const AuthForm = () => {
               className="bg-white px-8 py-2 rounded-full 
               w-full
               text-lg hover:bg-gray-300 transition duration-300
-              bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+              bg-gradient-to-r from-indigo-500 to-pink-500 
               hover:from-indigo-600 hover:via-pink-600
               hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
              "

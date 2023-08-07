@@ -5,6 +5,14 @@
   background-position: center;
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

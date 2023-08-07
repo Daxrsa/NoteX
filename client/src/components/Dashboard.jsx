@@ -1,5 +1,14 @@
+import Nav from "../components/Nav";
+import Sidebar from "./Sidebar";
+import Menu from "./Menu";
+
 const Dashboard = () => {
-  return <h2>Dashboard</h2>;
+  return (
+    <>
+      <Nav />
+      <Sidebar />
+    </>
+  );
 };
 
 export default Dashboard;

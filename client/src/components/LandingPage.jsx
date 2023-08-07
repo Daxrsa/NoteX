@@ -1,8 +1,10 @@
 import "animate.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import {AiOutlineCloud, AiOutlineLock} from 'react-icons/ai'
-import {GrNotes} from 'react-icons/gr'
+import { AiOutlineCloud, AiOutlineLock } from "react-icons/ai";
+import { GrNotes } from "react-icons/gr";
+import logo from "../assets/Images/NoteXlogo.png";
+import { BsArrowDownCircle } from "react-icons/bs";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -20,9 +22,12 @@ const LandingPage = () => {
     <div className="bg-white">
       <header className="bg-black text-white text-center py-10 bg-custom">
         <div className="container mx-auto px-4 flex justify-between items-center py-0">
-          <a href="#" className="text-2xl font-bold">
-            NoteX
-          </a>
+          <Link
+            to="/"
+            className="logo-container flex justify-center items-center bg-white rounded-full"
+          >
+            <img src={logo} width={80} />
+          </Link>
           <div>
             <a href="#features" className="px-4 hover:underline">
               Features
@@ -44,7 +49,7 @@ const LandingPage = () => {
           href="#get-started"
           className="bg-white px-8 py-2 rounded-full 
            text-lg hover:bg-gray-300 transition duration-300
-           bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+           bg-gradient-to-r from-indigo-500 to-pink-300
            hover:from-indigo-600 hover:via-pink-600
            hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
           "
@@ -62,24 +67,36 @@ const LandingPage = () => {
         </h2>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gray-100 p-8 rounded-lg text-center">
-            <div className="text-6xl mb-4 flex justify-center items-center"><GrNotes /></div>
-            <h3 className="text-xl font-bold mb-2">Easy Note Taking</h3>
+            <div className="text-6xl mb-4 flex justify-center items-center">
+              <GrNotes />
+            </div>
+            <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">
+              Easy Note Taking
+            </h3>
             <p className="text-gray-700">
               Create and organize notes with ease. Our intuitive interface makes
               note-taking a breeze.
             </p>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg text-center">
-            <div className="text-6xl mb-4 flex justify-center items-center"><AiOutlineLock /></div>
-            <h3 className="text-xl font-bold mb-2">Secure & Private</h3>
+            <div className="text-6xl mb-4 flex justify-center items-center">
+              <AiOutlineLock />
+            </div>
+            <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">
+              Secure & Private
+            </h3>
             <p className="text-gray-700">
               Your notes are encrypted and stored securely. Only you have access
               to your personal information.
             </p>
           </div>
           <div className="bg-gray-100 p-8 rounded-lg text-center">
-            <div className="text-6xl mb-4 flex justify-center items-center"><AiOutlineCloud /></div>
-            <h3 className="text-xl font-bold mb-2">Cloud Sync</h3>
+            <div className="text-6xl mb-4 flex justify-center items-center">
+              <AiOutlineCloud />
+            </div>
+            <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">
+              Cloud Sync
+            </h3>
             <p className="text-gray-700">
               Access your notes across different devices. Your notes are always
               with you, wherever you go.
@@ -101,20 +118,21 @@ const LandingPage = () => {
             <p className="text-4xl font-bold mb-4 mr-2 opacity-50">Free</p>
             <ul className="text-gray-700 mb-4">
               <li>100 Notes</li>
-              <li>1 GB Storage</li> 
+              <li>1 GB Storage</li>
               <li>Email Support</li>
             </ul>
-            <a
+            <Link
+              to="/pricing"
               href="#signup"
               className="bg-white px-8 py-2 rounded-full 
            text-lg hover:bg-gray-300 transition duration-300
-           bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+           bg-gradient-to-r from-indigo-500 to-pink-500 
            hover:from-indigo-600 hover:via-pink-600
            hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
           "
             >
               Sign Up
-            </a>
+            </Link>
           </div>
           <div className="bg-white p-8 rounded-lg text-center shadow-md">
             <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">Pro</h3>
@@ -124,21 +142,25 @@ const LandingPage = () => {
               <li>10 GB Storage</li>
               <li>Priority Support</li>
             </ul>
-            <a
-              href="#signup"
+            <Link
+              to="/pricing"
               className="bg-white px-8 py-2 rounded-full 
            text-lg hover:bg-gray-300 transition duration-300
-           bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+           bg-gradient-to-r from-indigo-500 to-pink-500
            hover:from-indigo-600 hover:via-pink-600
            hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
           "
             >
               Sign Up
-            </a>
+            </Link>
           </div>
           <div className="bg-white p-8 rounded-lg text-center shadow-md">
-            <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">Enterprise</h3>
-            <p className="text-4xl font-bold mb-4 mr-2 opacity-50">Contact Us</p>
+            <h3 className="text-xl font-bold mb-2 mr-2 opacity-50">
+              Enterprise
+            </h3>
+            <p className="text-4xl font-bold mb-4 mr-2 opacity-50">
+              Contact Us
+            </p>
             <ul className="text-gray-700 mb-4">
               <li>Custom Solutions</li>
               <li>Dedicated Support</li>
@@ -148,12 +170,12 @@ const LandingPage = () => {
               href="#contact"
               className="bg-white px-8 py-2 rounded-full 
               text-lg hover:bg-gray-300 transition duration-300
-              bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+              bg-gradient-to-r from-indigo-500 to-pink-500 
               hover:from-indigo-600 hover:via-pink-600
               hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
              "
             >
-              Learn More
+              Learn more
             </a>
           </div>
         </div>
@@ -165,12 +187,14 @@ const LandingPage = () => {
         </h2>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-4 mr-2 opacity-50">Get in Touch</h3>
+            <h3 className="text-xl font-bold mb-4 mr-2 opacity-50">
+              Get in Touch
+            </h3>
             <p className="text-gray-700 mb-4 mr-2 font-bold opacity-50">
               Have questions? Feel free to reach out to us. We're here to help!
             </p>
             <address className="mr-2 font-bold opacity-50">
-                <p>Email: daorsahyseni@gmail.com</p>
+              <p>Email: daorsahyseni@gmail.com</p>
             </address>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-md">
@@ -224,7 +248,7 @@ const LandingPage = () => {
                 type="submit"
                 className="bg-white px-8 py-2 rounded-full 
            text-lg hover:bg-gray-300 transition duration-300
-           bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500
+           bg-gradient-to-r from-indigo-500 to-pink-500
            hover:from-indigo-600 hover:via-pink-600
            hover:to-red-600 focus:outline-none text-white uppercase font-bold shadow-md mx-auto p-5
           "
@@ -236,7 +260,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <footer className="text-black text-center py-4">
+      <footer className="text-black bg-custom text-center py-4 mr-2 opacity-50 font-bold">
         <p>&copy; 2023 NoteX. All rights reserved.</p>
       </footer>
     </div>
