@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { FiFolderPlus } from "react-icons/fi";
+import { BsSortUpAlt } from "react-icons/bs";
 
-const Menu = () => {
+const Menu = ({
+  handleRightClick,
+}) => {
   const [isAddFolder, setAddFolder] = useState(false);
   const [newFolder, setNewFolder] = useState("");
 
@@ -48,16 +51,30 @@ const Menu = () => {
 
   return (
     <div className="flex flex-col items-start p-4 bg-gray-200 border-b border-white borde">
-      <button className="pb-3" onClick={handleAddFolder}>
-        <div className="relative group inline-block">
-          <FiFolderPlus size={20} />
-          <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
-            Add folder
-          </p>
-        </div>
-      </button>
+      <div>
+        <button className="pb-3 mr-2" onClick={handleAddFolder}>
+          <div className="relative group inline-block">
+            <FiFolderPlus size={20} />
+            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
+              Add folder
+            </p>
+          </div>
+        </button>
 
-      <div className="flex justify-between items-center w-full mb-2 hover:text-gray-500 cursor-pointer">
+        <button className="pb-3 ml-2">
+          <div className="relative group inline-block">
+            <BsSortUpAlt size={20} />
+            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
+              Sort
+            </p>
+          </div>
+        </button>
+      </div>
+
+      <div
+        onContextMenu={handleRightClick}
+        className="flex justify-between items-center w-full mb-2 hover:text-gray-500 cursor-pointer"
+      >
         <p className="pr-5">
           <AiOutlineArrowDown />
         </p>
@@ -78,7 +95,10 @@ const Menu = () => {
           />
         </div>
       ) : (
-        <div className="flex justify-between items-center w-full mb-2 cursor-pointer">
+        <div
+          onContextMenu={handleRightClick}
+          className="flex justify-between items-center w-full mb-2 hover:text-gray-500 cursor-pointer"
+        >
           <p className="pr-5">
             <AiOutlineArrowDown />
           </p>

@@ -1,13 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 import Menu from "./Menu";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import { GrGraphQl } from "react-icons/gr";
 import { BsTerminal } from "react-icons/bs";
-import MainView from "../components/editor/MainView";
+import Note from "../components/editor/Note";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const Sidebar = () => {
+const Sidebar = ({
+  handleRightClick,
+}) => {
   return (
     <div className="flex">
       <div
@@ -47,8 +48,8 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <Menu />
-      <MainView />
+      <Menu {...{ handleRightClick }} />
+      <Note />
     </div>
   );
 };

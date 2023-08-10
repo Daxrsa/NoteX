@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineCloud, AiOutlineLock } from "react-icons/ai";
 import { GrNotes } from "react-icons/gr";
 import logo from "../assets/Images/NoteXlogo.png";
-import { BsArrowDownCircle } from "react-icons/bs";
 
 const LandingPage = () => {
   useEffect(() => {

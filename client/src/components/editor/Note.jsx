@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 
-const MainView = () => {
+const Note = () => {
   const [isEditing, setIsEditing] = useState(true);
 
   const [title, setTitle] = useState("");
@@ -74,5 +74,5 @@ const MainView = () => {
   );
 };
 
-export default MainView;
+export default Note;
 

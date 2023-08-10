@@ -125,7 +125,7 @@ const AuthForm = () => {
               </>
             ) : (
               <>
-                <p className="mr-2 mr-2 font-bold opacity-50">New to NoteX?</p>
+                <p className="mr-2 font-bold opacity-50">New to NoteX?</p>
                 <button onClick={toggleVariant} className="mr-2 font-bold opacity-50 underline">
                   Register here
                 </button>
