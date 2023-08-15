@@ -6,9 +6,13 @@ import { BsTerminal } from "react-icons/bs";
 import Note from "../components/editor/Note";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const Sidebar = ({
-  handleRightClick,
-}) => {
+const Sidebar = ({ handleRightClick }) => {
+  const [showMenu, setShowMenu] = useState(true);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="flex">
       <div
@@ -17,10 +21,22 @@ const Sidebar = ({
       >
         <div to="/file" className="mb-4 text-gray-600 hover:text-gray-800">
           <div className="relative group inline-block cursor-pointer">
-            <AiOutlineFolderOpen size={20} />
-            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
-              Collapse
-            </p>
+            <AiOutlineFolderOpen size={20} onClick={toggleMenu} />
+            {showMenu ? (
+              <p
+                onClick={toggleMenu}
+                className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0 z-50"
+              >
+                Collapse
+              </p>
+            ) : (
+              <p
+                onClick={toggleMenu}
+                className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0 z-50"
+              >
+                Open
+              </p>
+            )}
           </div>
         </div>
         <div to="/file" className="mb-4 text-gray-600 hover:text-gray-800">
@@ -48,7 +64,7 @@ const Sidebar = ({
           </div>
         </div>
       </div>
-      <Menu {...{ handleRightClick }} />
+      {showMenu && <Menu {...{ handleRightClick }} />}
       <Note />
     </div>
   );

@@ -55,7 +55,7 @@ const Menu = ({
         <button className="pb-3 mr-2" onClick={handleAddFolder}>
           <div className="relative group inline-block">
             <FiFolderPlus size={20} />
-            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
+            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0 z-50">
               Add folder
             </p>
           </div>
