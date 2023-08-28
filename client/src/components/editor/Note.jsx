@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
+import SearchInput from "../SearchInput";
 
 const Note = () => {
   const [isEditing, setIsEditing] = useState(true);

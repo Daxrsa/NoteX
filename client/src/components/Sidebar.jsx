@@ -5,9 +5,17 @@ import { GrGraphQl } from "react-icons/gr";
 import { BsTerminal } from "react-icons/bs";
 import Note from "../components/editor/Note";
 import { AiOutlineSearch } from "react-icons/ai";
+import { AnimatePresence } from "framer-motion";
+import SearchInput from "./SearchInput";
 
 const Sidebar = ({ handleRightClick }) => {
   const [showMenu, setShowMenu] = useState(true);
+
+  const [showSearch, setShowSearch] = useState(true);
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  }
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -42,9 +50,11 @@ const Sidebar = ({ handleRightClick }) => {
         <div to="/file" className="mb-4 text-gray-600 hover:text-gray-800">
           <div className="relative group inline-block cursor-pointer">
             <AiOutlineSearch size={20} />
-            <p className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
+            <button 
+            onClick={toggleSearch}
+            className="hidden group-hover:block absolute bg-white border border-gray-200 p-2 rounded-md text-sm text-gray-500 left-full top-0">
               Search
-            </p>
+            </button>
           </div>
         </div>
         <div to="/edit" className="mb-4 text-gray-600 hover:text-gray-800">
